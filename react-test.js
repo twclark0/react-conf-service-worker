@@ -3,7 +3,6 @@ class ReactServiceWorker extends React.Component {
 
   decrement = event => {
     this.stateToServiceWorker({
-      property: 'counter',
       state: this.state.counter - 1
     })
     this.setState(prevState => ({ counter: prevState.counter - 1 }))
@@ -11,7 +10,6 @@ class ReactServiceWorker extends React.Component {
 
   increment = event => {
     this.stateToServiceWorker({
-      property: 'counter',
       state: this.state.counter + 1
     })
     this.setState(prevState => ({ counter: prevState.counter + 1 }))
@@ -30,12 +28,9 @@ class ReactServiceWorker extends React.Component {
         .then(() => navigator.serviceWorker.ready)
         .then(() => {
           navigator.serviceWorker.addEventListener('message', function(event) {
-            if (
-              event.data &&
-              event.data.property === 'counter' &&
-              event.data.state !== undefined
-            )
+            if (event.data && event.data.state) {
               self.setState({ counter: event.data.state })
+            }
           })
         })
         .catch(error => {
