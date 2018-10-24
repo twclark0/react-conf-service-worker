@@ -1,0 +1,54 @@
+<html lang="en">
+<meta charset="utf-8">
+<title>Service Workers - Tab Syncing</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<style>
+    body {
+        position: relative;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    button {
+        background: hsl(192, 100%, 50%);
+        color: hsl(0, 0%, 7%);
+        border-radius: 0px;
+        border: 1px solid hsl(192, 100%, 50%);
+        font-size: 2em;
+        font-weight: 100;
+        line-height: inherit;
+        width: 125px;
+        height: 125px;
+        margin: 25px;
+        outline: none;
+        padding: 5px 15px 10px;
+        transition: background .2s;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #ffffff;
+    }
+
+    .counter {
+        font-size: 300px;
+        color: hsl(192, 100%, 50%);
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script src="./react-test.js" type="text/babel"></script>
+</body>
+
+</html>
